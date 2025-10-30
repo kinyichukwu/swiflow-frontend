@@ -1,0 +1,105 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  padding: 2rem;
+}
+
+.home-content {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #00d4ff 0%, #00a8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.home-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 3rem 0;
+  font-weight: 400;
+}
+
+.tx-form {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.tx-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.tx-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tx-input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+}
+
+.submit-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00d4ff 0%, #00a8ff 100%);
+  border: none;
+  border-radius: 12px;
+  color: #0a0e27;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .input-group {
+    flex-direction: row;
+  }
+  
+  .tx-input {
+    flex: 1;
+  }
+  
+  .submit-button {
+    flex-shrink: 0;
+  }
+}
+
+

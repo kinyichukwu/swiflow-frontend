@@ -1,0 +1,91 @@
+.graph-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0e27;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.back-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  color: #00d4ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.back-button:hover {
+  background: rgba(0, 212, 255, 0.2);
+  transform: translateX(-2px);
+}
+
+.tx-hash-display {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.react-flow-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.react-flow-dark .react-flow__node {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+.react-flow-dark .react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow-dark .react-flow__controls {
+  background: rgba(26, 31, 58, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.react-flow-dark .react-flow__controls-button {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  color: #ffffff;
+}
+
+.react-flow-dark .react-flow__controls-button:hover {
+  background: rgba(0, 212, 255, 0.2);
+}
+
+.react-flow-dark .react-flow__minimap {
+  background: rgba(26, 31, 58, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .graph-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .tx-hash-display {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+}
+
+
