@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
   return (
     <section className="py-10 flex flex-col gap-10 justify-center items-center">
       <div className="relative text-white flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center text-center gap-3 relative">
+        <div className="flex flex-col justify-center items-center text-center gap-10 relative">
           <LandingDarkButton text="TRANSACTION ANALYSIS" isIcon={false} />
           <GradientText
             text={<>Featured Capabilities</>}

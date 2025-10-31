@@ -91,7 +91,6 @@ button:focus-visible {
 /* Custom Tailwind colors - Sui.io inspired */
 :root {
   --color-ashy: #011829;
-  --color-ashyBorder: #1a2e42;
   --color-blue: #4da2ff;
   --color-sui-blue: #4da2ff;
   --color-sui-blue-dark: #4d65ff;

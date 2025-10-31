@@ -14,7 +14,6 @@ export default {
         'sui-light': '#F7F7F8',
         // Keep existing colors for backward compatibility
         ashy: '#011829', // Updated to match sui.io dark bg
-        ashyBorder: '#1a2e42',
         blue: '#4da2ff', // Updated to match sui.io blue
         // Gradient colors
         'gradient-blue-start': '#3DB3FC',

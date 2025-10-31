@@ -3,17 +3,24 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
 export const CTA = ({
-  text = `Suiflow. ${new Date().getFullYear()}. All rights reserved`,
+  text = `SwiFlow. ${new Date().getFullYear()}. All rights reserved`,
 }) => {
   return (
-    <footer className="bg-sui-bg border-t border-ashyBorder mt-20">
+    <footer className="bg-sui-bg border-t border-white/30 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <div className="text-2xl font-bold">
-              <span className="text-sui-blue">Sui</span>
-              <span className="text-white">flow</span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/suiflow-logo.svg"
+                alt="SwiFlow"
+                className="h-8 w-auto"
+              />
+              <div className="text-2xl font-bold">
+                <span className="text-sui-blue">Swi</span>
+                <span className="text-white">Flow</span>
+              </div>
             </div>
             <p className="text-white/60 text-sm">
               Visualize Sui blockchain transactions with interactive graph analytics.
@@ -67,7 +74,7 @@ export const CTA = ({
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-ashyBorder pt-6">
+        <div className="border-t border-white/30 pt-6">
           <p className="text-white/40 text-xs sm:text-sm text-center">{text}</p>
         </div>
       </div>

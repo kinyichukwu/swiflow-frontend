@@ -22,17 +22,20 @@ export const Navbar = () => {
       <nav
         className={`w-full md:w-[90%] lg:max-w-6xl transition-all duration-300 ${
           scrolled
-            ? 'bg-sui-bg/80 backdrop-blur-md shadow-lg border-b border-ashyBorder'
+            ? 'bg-sui-bg/80 backdrop-blur-md shadow-lg border-b border-white/30'
             : 'bg-transparent'
         }`}
       >
         <div className="flex justify-between items-center px-6 md:px-10 py-4 md:py-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="text-2xl md:text-3xl font-bold tracking-tight">
-              <span className="text-sui-blue">
-                Swi
-              </span>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/suiflow-logo.svg"
+              alt="SwiFlow"
+              className="h-8 md:h-10 w-auto"
+            />
+            <div className="text-xl md:text-2xl font-bold tracking-tight">
+              <span className="text-sui-blue">Swi</span>
               <span className="text-white">Flow</span>
             </div>
           </Link>
@@ -89,7 +92,7 @@ export const Navbar = () => {
             menuOpen ? 'max-h-96' : 'max-h-0'
           }`}
         >
-          <div className="flex flex-col gap-4 px-6 pb-6 bg-sui-bg/95 backdrop-blur-md border-t border-ashyBorder">
+          <div className="flex flex-col gap-4 px-6 pb-6 bg-sui-bg/95 backdrop-blur-md border-t border-white/30">
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
