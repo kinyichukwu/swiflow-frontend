@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Hero from '../components/landing-components/Hero';
+import OurProcess from '../components/landing-components/OurProcess';
+import FeaturedProducts from '../components/landing-components/FeaturedProducts';
+import WeBuildSolutionsForWeb3 from '../components/landing-components/WeBuildSolutionsForWeb3';
+import { CTA } from '../components/cta/CTA';
 import './Home.css';
 
 export default function Home() {
   const [txHash, setTxHash] = useState('');
+  const [showForm, setShowForm] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -13,27 +19,77 @@ export default function Home() {
     }
   };
 
+  const handleClickAnywhere = (e) => {
+    // If clicking on the form or its children, don't navigate
+    if (e.target.closest('.tx-form-overlay')) {
+      return;
+    }
+    // Navigate to demo graph on any other click
+    navigate('/graph/demo');
+  };
+
   return (
-    <div className="home-container">
-      <div className="home-content">
-        <h1 className="home-title">Swiflow</h1>
-        <p className="home-subtitle">Visualize blockchain transactions in a graph</p>
-        
-        <form onSubmit={handleSubmit} className="tx-form">
-          <div className="input-group">
-            <input
-              type="text"
-              value={txHash}
-              onChange={(e) => setTxHash(e.target.value)}
-              placeholder="Enter transaction hash..."
-              className="tx-input"
-            />
-            <button type="submit" className="submit-button">
-              View Graph
+    <div className="bg-ashy min-h-screen overflow-hidden relative" onClick={handleClickAnywhere}>
+      <Hero />
+
+      {/* Prominent Transaction Input Section */}
+      {showForm && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 tx-form-overlay">
+          <div className="bg-ashy/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-ashyBorder max-w-2xl w-[90vw]">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowForm(false);
+              }}
+              className="absolute top-4 right-4 text-white/50 hover:text-white text-2xl"
+            >
+              ×
             </button>
+
+            <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">
+              Analyze a Transaction
+            </h2>
+            <p className="text-white/70 text-sm sm:text-base mb-6 text-center">
+              Enter a Sui transaction hash to visualize its flow
+            </p>
+
+            <form onSubmit={handleSubmit} className="tx-form" onClick={(e) => e.stopPropagation()}>
+              <div className="input-group flex flex-col sm:flex-row gap-3">
+                <input
+                  type="text"
+                  value={txHash}
+                  onChange={(e) => setTxHash(e.target.value)}
+                  placeholder="Enter transaction hash..."
+                  className="tx-input flex-1 px-4 py-3 rounded-lg bg-white/5 border border-ashyBorder text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="submit-button px-6 py-3 bg-gradient-to-r from-[#3DB3FC] to-[#936BF9] via-[#5C80FA] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  View Graph
+                </button>
+              </div>
+            </form>
+
+            <div className="mt-4 text-center">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/graph/demo');
+                }}
+                className="text-blue-400 hover:text-blue-300 text-sm underline"
+              >
+                Or try a demo transaction
+              </button>
+            </div>
           </div>
-        </form>
-      </div>
+        </div>
+      )}
+
+      <OurProcess />
+      <FeaturedProducts />
+      <WeBuildSolutionsForWeb3 />
+      <CTA />
     </div>
   );
 }

@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow important pages
+Allow: /bot
+Allow: /sitemap.xml
+Allow: /site.webmanifest
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://tonderlabs.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent overloading)
+Crawl-delay: 1

@@ -1,39 +1,78 @@
+/* Hero Background Layers */
 .home-container {
+  min-height: 100vh;
   width: 100vw;
-  height: 100vh;
+  position: relative;
+  background: #0a0e1a;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-  padding: 2rem;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 120%, rgba(255, 0, 100, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(100, 150, 255, 0.2), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(150, 0, 255, 0.15), transparent);
+  filter: blur(60px);
+  opacity: 0.4;
+}
+
+.hero-streaks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(45deg, transparent 40%, rgba(255, 50, 150, 0.3) 45%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(100, 200, 255, 0.3) 45%, transparent 60%),
+    linear-gradient(45deg, transparent 30%, rgba(150, 100, 255, 0.2) 35%, transparent 50%);
+  filter: blur(60px);
+  opacity: 0.6;
 }
 
 .home-content {
   max-width: 600px;
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
 }
 
 .home-title {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 7rem;
+  font-weight: 500;
   margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, #00d4ff 0%, #00a8ff 100%);
+  background: linear-gradient(135deg, #4c9aff 0%, #5ea5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .home-subtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0 0 3rem 0;
   font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
 }
 
 .tx-form {
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .input-group {
@@ -46,13 +85,14 @@
   width: 100%;
   padding: 1rem 1.5rem;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  color: #ffffff;
+  color: #fff;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  letter-spacing: -0.01em;
 }
 
 .tx-input::placeholder {
@@ -61,27 +101,29 @@
 
 .tx-input:focus {
   outline: none;
-  border-color: #00d4ff;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+  border-color: rgba(76, 154, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 4px rgba(76, 154, 255, 0.1);
 }
 
 .submit-button {
   padding: 1rem 2rem;
   font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #00d4ff 0%, #00a8ff 100%);
+  font-weight: 500;
+  background: linear-gradient(135deg, #4c9aff 0%, #5ea5ff 100%);
   border: none;
   border-radius: 12px;
-  color: #0a0e27;
+  color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 20px rgba(76, 154, 255, 0.3);
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(76, 154, 255, 0.4);
 }
 
 .submit-button:active {
@@ -92,14 +134,26 @@
   .input-group {
     flex-direction: row;
   }
-  
+
   .tx-input {
     flex: 1;
   }
-  
+
   .submit-button {
     flex-shrink: 0;
   }
+
+  .home-title {
+    font-size: 8rem;
+  }
 }
 
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 4rem;
+  }
 
+  .home-content {
+    padding: 1rem;
+  }
+}
