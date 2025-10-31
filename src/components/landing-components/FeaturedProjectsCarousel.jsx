@@ -26,7 +26,7 @@ const FeaturedProjectsCarousel = ({ next }) => {
 
       <div
         onClick={() => navigate('/graph/demo')}
-        className="cursor-pointer h-[220px] sm:h-[330px] lg:h-[600px] aspect-square bg-white/[0.05] flex justify-center items-center rounded-2xl lg:rounded-[3rem] hover:scale-105 transition-transform"
+        className="cursor-pointer h-[220px] sm:h-[330px] lg:h-[600px] aspect-square bg-gradient-to-br from-sui-blue to-sui-blue-dark flex justify-center items-center rounded-2xl lg:rounded-[3rem] hover:scale-105 transition-transform shadow-lg shadow-sui-blue/20"
       >
         <div className="text-white text-center px-6">
           <h3 className="text-xl sm:text-3xl lg:text-5xl font-bold mb-3">
@@ -34,6 +34,20 @@ const FeaturedProjectsCarousel = ({ next }) => {
           </h3>
           <p className="text-xs sm:text-sm lg:text-lg font-light">
             Deep insights into transaction patterns
+          </p>
+        </div>
+      </div>
+
+      <div
+        onClick={() => navigate('/graph/demo')}
+        className="cursor-pointer h-[220px] sm:h-[330px] lg:h-[600px] aspect-square bg-gradient-to-tr from-[#936BF9] to-sui-blue-dark flex justify-center items-center rounded-2xl lg:rounded-[3rem] hover:scale-105 transition-transform shadow-lg shadow-purple-500/20"
+      >
+        <div className="text-white text-center px-6">
+          <h3 className="text-xl sm:text-3xl lg:text-5xl font-bold mb-3">
+            Real-time Data
+          </h3>
+          <p className="text-xs sm:text-sm lg:text-lg font-light">
+            Live blockchain transaction monitoring
           </p>
         </div>
       </div>

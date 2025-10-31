@@ -30,9 +30,9 @@ const FeaturedProducts = () => {
 
       <div className="flex justify-center items-center sm:justify-end  gap-3 max-w-[75rem] xl:mx-auto mx-6 mt-4 lg:absolute lg:right-[10%] lg:-translate-y-[230px]">
         <div
-          className={`w-[54px] h-[54px] rounded-full flex justify-center items-center  border cursor-pointer ${
-            next ? "" : "bg-[#ffffff0e] border-transparent"
-          }  `}
+          className={`w-[54px] h-[54px] rounded-full flex justify-center items-center border cursor-pointer transition-all ${
+            next ? "border-white/30 hover:bg-white/10" : "bg-sui-blue border-transparent hover:bg-sui-blue-dark"
+          }`}
           onClick={() => {
             setNext(false);
           }}
@@ -40,9 +40,9 @@ const FeaturedProducts = () => {
           <BsArrowLeft className="text-[1.3rem] text-white" />
         </div>
         <div
-          className={` w-[54px] h-[54px] rounded-full flex justify-center items-center border cursor-pointer ${
-            next ? "bg-[#ffffff0e] border-transparent" : ""
-          } `}
+          className={`w-[54px] h-[54px] rounded-full flex justify-center items-center border cursor-pointer transition-all ${
+            next ? "bg-sui-blue border-transparent hover:bg-sui-blue-dark" : "border-white/30 hover:bg-white/10"
+          }`}
           onClick={() => {
             setNext(true);
           }}

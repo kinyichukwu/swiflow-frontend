@@ -17,6 +17,18 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
+
   return (
     <div className="w-full flex justify-center items-center fixed top-0 z-[100]">
       <nav
@@ -67,63 +79,79 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden z-50 relative w-8 h-8"
+            className="md:hidden z-[150] relative w-10 h-10 flex items-center justify-center"
+            aria-label="Toggle menu"
           >
             <img
               src={menuIcon}
               alt="menu"
-              className={`absolute inset-0 w-7 transition-opacity duration-300 ${
-                menuOpen ? 'opacity-0' : 'opacity-100'
+              className={`absolute w-6 transition-all duration-300 ${
+                menuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'
               }`}
             />
             <img
               src={closeIcon}
               alt="close"
-              className={`absolute inset-0 w-5 m-auto transition-opacity duration-300 ${
-                menuOpen ? 'opacity-100' : 'opacity-0'
+              className={`absolute w-5 transition-all duration-300 ${
+                menuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
               }`}
             />
           </button>
         </div>
 
+        {/* Mobile Menu Backdrop */}
+        <div
+          className={`md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-[110] ${
+            menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setMenuOpen(false)}
+        />
+
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? 'max-h-96' : 'max-h-0'
+          className={`md:hidden fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-sui-bg border-l border-white/20 shadow-2xl transition-transform duration-300 ease-in-out z-[120] ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="flex flex-col gap-4 px-6 pb-6 bg-sui-bg/95 backdrop-blur-md border-t border-white/30">
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-sui-blue transition-colors py-2"
-            >
-              Home
-            </Link>
-            <Link
-              to="/graph/demo"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-sui-blue transition-colors py-2"
-            >
-              Demo
-            </Link>
-            <a
-              href="https://docs.sui.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-sui-blue transition-colors py-2"
-            >
-              Docs
-            </a>
-            <GradientButton
-              text="Get Started"
-              isIcon={false}
-              className="text-sm py-3 px-6 w-full"
-              onClick={() => {
-                setMenuOpen(false);
-                window.location.href = '/graph/demo';
-              }}
-            />
+          <div className="flex flex-col h-full pt-24 px-8 pb-8">
+            {/* Menu Items */}
+            <div className="flex flex-col gap-2 mb-8">
+              <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-sui-blue transition-colors py-4 text-lg font-medium border-b border-white/10 hover:border-sui-blue/30"
+              >
+                Home
+              </Link>
+              <Link
+                to="/graph/demo"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-sui-blue transition-colors py-4 text-lg font-medium border-b border-white/10 hover:border-sui-blue/30"
+              >
+                Demo
+              </Link>
+              <a
+                href="https://docs.sui.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-sui-blue transition-colors py-4 text-lg font-medium border-b border-white/10 hover:border-sui-blue/30"
+              >
+                Documentation
+              </a>
+            </div>
+
+            {/* CTA Button */}
+            <div className="mt-auto">
+              <GradientButton
+                text="Get Started"
+                isIcon={false}
+                className="text-base py-4 px-6 w-full justify-center"
+                onClick={() => {
+                  setMenuOpen(false);
+                  window.location.href = '/graph/demo';
+                }}
+              />
+            </div>
           </div>
         </div>
       </nav>
