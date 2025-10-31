@@ -31,7 +31,7 @@ const OurProcess = () => (
 
       <section className="relative flex justify-end items-center w-full md:w-3/5 my-10">
         <AllProcessCards />
-        <div className="absolute max-w-[1000px] w-[75%] sm:w-[90%] md:w-[90%] lg:w-full rounded-l-2xl lg:rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 h-[200px] sm:h-[370px]" />
+        <div className="absolute max-w-[1000px] w-[75%] sm:w-[90%] md:w-[90%] lg:w-full rounded-l-2xl lg:rounded-2xl bg-gradient-to-r from-sui-blue to-sui-blue-dark h-[200px] sm:h-[370px]" />
       </section>
     </div>
   </div>

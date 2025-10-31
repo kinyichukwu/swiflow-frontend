@@ -7,9 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        ashy: '#0a0e1a',
-        ashyBorder: '#1a2332',
-        blue: '#3DB3FC',
+        // Sui.io inspired colors
+        'sui-blue': '#4da2ff',
+        'sui-blue-dark': '#4d65ff',
+        'sui-bg': '#011829',
+        'sui-light': '#F7F7F8',
+        // Keep existing colors for backward compatibility
+        ashy: '#011829', // Updated to match sui.io dark bg
+        ashyBorder: '#1a2e42',
+        blue: '#4da2ff', // Updated to match sui.io blue
+        // Gradient colors
+        'gradient-blue-start': '#3DB3FC',
+        'gradient-blue-mid': '#5C80FA',
+        'gradient-purple-end': '#936BF9',
       },
     },
   },

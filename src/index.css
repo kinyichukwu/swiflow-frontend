@@ -1,8 +1,5 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,7 +9,7 @@
 
   color-scheme: dark;
   color: #fff;
-  background-color: #0a0e1a;
+  background-color: #011829;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,7 +25,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0a0e1a;
+  background-color: #011829;
   color: #fff;
 }
 
@@ -40,12 +37,12 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   font-weight: 500;
-  color: #4c9aff;
+  color: #4da2ff;
   text-decoration: inherit;
   transition: color 0.3s ease;
 }
 a:hover {
-  color: #5ea5ff;
+  color: #4d65ff;
 }
 
 button {
@@ -55,7 +52,7 @@ button {
 
 button:focus,
 button:focus-visible {
-  outline: 2px solid #4c9aff;
+  outline: 2px solid #4da2ff;
   outline-offset: 2px;
 }
 
@@ -91,9 +88,12 @@ button:focus-visible {
   animation: zig-float-2 3.5s ease-in-out infinite;
 }
 
-/* Custom Tailwind colors */
+/* Custom Tailwind colors - Sui.io inspired */
 :root {
-  --color-ashy: #0a0e1a;
-  --color-ashyBorder: #1a2332;
-  --color-blue: #3DB3FC;
+  --color-ashy: #011829;
+  --color-ashyBorder: #1a2e42;
+  --color-blue: #4da2ff;
+  --color-sui-blue: #4da2ff;
+  --color-sui-blue-dark: #4d65ff;
+  --color-sui-bg: #011829;
 }

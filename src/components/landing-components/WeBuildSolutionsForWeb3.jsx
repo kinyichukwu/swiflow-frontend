@@ -9,7 +9,7 @@ const WeBuildSolutionsForWeb3 = () => {
 
   return (
     <Transition>
-      <div className="text-white bg-gradient-to-r from-[#3DB3FC] via-[#5C80FA] to-[#936BF9] w-full flex justify-center items-center mb-24 py-10 lg:py-[4.5rem] relative px-4 overflow-hidden max-w-[100rem]">
+      <div className="text-white bg-gradient-to-r from-gradient-blue-start via-gradient-blue-mid to-gradient-purple-end w-full flex justify-center items-center mb-24 py-10 lg:py-[4.5rem] relative px-4 overflow-hidden max-w-[100rem]">
         <img
           src={worlddextop}
           alt="World background"
