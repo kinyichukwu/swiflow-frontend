@@ -194,13 +194,13 @@ App (Container)
 
 
 - **Frontend Repository**: [suiflow-frontend](https://github.com/kinyichukwu/swiflow-frontend)
-- **Backend Repository**: [suiflow-backend](https://github.com/Phenzic/suiflow-backend)
+- **Backend Repository**: [suiflow-backend](https://github.com/Phenzic/suiflow-server)
 - **Sui Blockchain**: [sui.io](https://sui.io)
 
 <div align="center">
 
 Built with ❤️ for the Sui ecosystem
 
-**@Kins** • **@MayowaJulius**
+**@Kins** • **@Phenzic**
 
 </div>
