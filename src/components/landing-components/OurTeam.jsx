@@ -1,5 +1,4 @@
 import { TeamMember } from './TeamMember';
-import { GradientText } from '../special_text/GradientText';
 import LandingDarkButton from '../buttons/LandingDarkButton';
 
 const teamMembers = [
@@ -10,17 +9,7 @@ const teamMembers = [
   },
   {
     name: 'Lead Engineer',
-    role: 'Blockchain Development',
-    image: null,
-  },
-  {
-    name: 'Frontend Dev',
-    role: 'UI/UX Development',
-    image: null,
-  },
-  {
-    name: 'Backend Dev',
-    role: 'Infrastructure',
+    role: 'Blockchain Engineer',
     image: null,
   },
   {
@@ -32,7 +21,7 @@ const teamMembers = [
 
 export const OurTeam = () => {
   return (
-    <div className="text-white py-20 md:py-28 lg:py-32 w-full flex flex-col relative overflow-hidden bg-gradient-to-b from-transparent via-sui-blue/5 to-transparent">
+    <div className="text-white py-20 md:py-28 lg:py-32 w-full flex flex-col relative overflow-hidden bg-gradient-to-b from-sui-bg via-sui-blue/10 to-sui-bg border-y border-white/10">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-1/4 w-96 h-96 bg-sui-blue/10 rounded-full blur-3xl animate-pulse"></div>

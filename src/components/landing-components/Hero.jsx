@@ -1,10 +1,20 @@
-import { GradientButton } from "../buttons/GradientButton";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import zigzag from "../../../assets/landing-page/Zigzag.png";
 import zigzag2 from "../../../assets/landing-page/Zigzag2.png";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [txHash, setTxHash] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (txHash.trim()) {
+      navigate(`/graph/${txHash.trim()}`);
+    } else {
+      navigate('/graph/demo');
+    }
+  };
 
   return (
     <div className="relative w-full">
@@ -16,27 +26,46 @@ const Hero = () => {
       </div>
 
       <section className="w-full text-white flex flex-col justify-center items-center pb-24 md:pb-32 z-10 px-4 relative">
-        <h1 className="flex flex-col justify-center items-center text-center lg:text-8xl text-[2.8rem] sm:text-[4rem] font-bold sm:px-3 tracking-tighter leading-[0.9] pt-24 md:pt-32 lg:pt-36">
-          Visualize <span className="text-sui-blue">Sui</span> <br />
+        <h1 className="flex flex-col justify-center items-center text-center lg:text-7xl xl:text-8xl text-[3rem] sm:text-[4rem] font-bold sm:px-3 tracking-tighter leading-[1.05] pt-24 md:pt-32 lg:pt-36">
+          <span className="text-sui-blue">Visualize</span> <span className="text-white">Sui</span> <br />
           <div className="flex gap-3 justify-center flex-wrap">
-            <span className="text-sui-blue">
+            <span className="text-white">
               Blockchain
             </span>
-            Transactions
+            <span className="text-sui-blue">Transactions</span>
           </div>
-          with Precision
         </h1>
-        <p className="text-center pt-6 pb-8 sm:pt-6 text-base lg:text-xl z-10 text-white/70 max-w-3xl">
-          SwiFlow is dedicated to helping users understand Sui blockchain transactions through interactive graph visualizations and analytics
+        <p className="text-center pt-6 pb-8 sm:pt-6 text-base lg:text-lg z-10 text-white/70 max-w-3xl">
+          <span className="text-white">SwiFlow</span> is dedicated to helping users understand <span className="text-sui-blue">Sui blockchain transactions</span> through interactive <span className="text-white">graph visualizations</span> and analytics
         </p>
 
-        <GradientButton
-          myPadding={true}
-          className="text-base px-8 py-3 sm:px-12 sm:py-4 font-semibold"
-          text="Start Visualizing"
-          isIcon={false}
-          onClick={() => navigate('/graph/demo')}
-        />
+        <form onSubmit={handleSearch} className="w-full max-w-2xl px-4">
+          <div className="flex flex-col sm:flex-row gap-3 items-center">
+            <input
+              type="text"
+              value={txHash}
+              onChange={(e) => setTxHash(e.target.value)}
+              placeholder="Enter transaction hash to visualize..."
+              className="flex-1 w-full px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-sui-blue focus:bg-white/15 transition-all text-sm lg:text-base"
+            />
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#3DB3FC] via-[#5C80FA] to-[#936BF9] text-white rounded-full font-semibold text-sm lg:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all whitespace-nowrap"
+            >
+              Visualize
+            </button>
+          </div>
+          <p className="text-white/50 text-xs sm:text-sm text-center mt-3">
+            Or{" "}
+            <button
+              type="button"
+              onClick={() => navigate('/graph/demo')}
+              className="text-sui-blue hover:text-sui-blue-dark underline transition-colors"
+            >
+              try a demo transaction
+            </button>
+          </p>
+        </form>
       </section>
       <img
         src={zigzag}
